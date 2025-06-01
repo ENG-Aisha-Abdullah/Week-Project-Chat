@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <div className="h-screen customBageColor">
-      <div className="pt-20 md:pt-40">
+      <div className="pt-30 md:pt-40">
         <div className="container mx-auto px-8 lg:flex flex">
           <div className="text-center lg:text-left lg:w-1/2">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none text-gray-800">
@@ -20,7 +20,7 @@ function Home() {
               up and start chatting – it’s safe, simple, and designed to help
               you express yourself freely.
             </p>
-            <div className="flex gap-5 justify-center lg:justify-start">
+            <div className="flex gap-5 justify-center lg:justify-start ">
               {!isLoggedIn && (
                 <p className="mt-8 md:mt-12">
                   <Link to="/register">
