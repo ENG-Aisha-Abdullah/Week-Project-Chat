@@ -9,7 +9,6 @@ function Chat() {
   const [chatBgImage, setChatBgImage] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
- 
   useEffect(() => {
     const savedBg = localStorage.getItem("chatBackground");
     if (savedBg) {
@@ -26,7 +25,6 @@ function Chat() {
     return () => clearInterval(interval);
   }, []);
 
-
   const sendMessage = () => {
     if (!newMessage.trim() || !receiver.trim()) {
       Swal.fire({
@@ -42,7 +40,6 @@ function Chat() {
       message: newMessage,
     };
 
-
     axios
       .post("https://683b1e8c43bb370a8674cae2.mockapi.io/messages", newMsg)
       .then((res) => {
@@ -51,11 +48,7 @@ function Chat() {
       });
   };
 
-
-
-
-
-//تغيير خلفية المحادثة 
+  //تغيير خلفية المحادثة
   const backgroundImage = () => {
     if (imageUrl.trim()) {
       const cleanUrl = imageUrl.trim();
@@ -64,12 +57,10 @@ function Chat() {
     }
   };
 
-
-
   return (
     <div className="min-h-screen customBageColor flex flex-col items-center gap-4 p-4">
       <h1 className="text-3xl font-bold text-gray-800 my-4">Let's Chat</h1>
- <div className="flex gap-2 w-full max-w-2xl mt-4">
+      <div className="flex gap-2 w-full max-w-2xl mt-4">
         <input
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
@@ -94,10 +85,11 @@ function Chat() {
           <div
             key={msg.id}
             className={`p-2 my-1 rounded break-words whitespace-pre-wrap max-w-70 
-                ${msg.sender === localStorage.getItem("email")
-                ? "bg-green-200 self-end text-right"
-                : "bg-amber-100 self-start text-left"
-            }`}
+                ${
+                  msg.sender === localStorage.getItem("email")
+                    ? "bg-green-200 self-end text-right"
+                    : "bg-amber-100 self-start text-left"
+                }`}
           >
             <p>{msg.message}</p>
             <span className="text-xs text-gray-500">
@@ -109,12 +101,14 @@ function Chat() {
 
       <div className="w-full max-w-2xl flex gap-2 mt-4 flex-col sm:flex-row">
         <input
+          type="email"
           value={receiver}
           onChange={(e) => setReceiver(e.target.value)}
           placeholder="Receiver Email"
           className="flex-1 border border-gray-500 px-4 py-2 rounded focus:outline-green-700"
         />
         <input
+        type="text"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           placeholder="Type a message..."
