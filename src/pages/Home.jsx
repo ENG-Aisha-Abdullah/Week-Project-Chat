@@ -20,7 +20,7 @@ function Home() {
               up and start chatting – it’s safe, simple, and designed to help
               you express yourself freely.
             </p>
-            <div className="flex gap-5">
+            <div className="flex gap-5 justify-center lg:justify-start">
               {!isLoggedIn && (
                 <p className="mt-8 md:mt-12">
                   <Link to="/register">
