@@ -4,7 +4,7 @@ import Footer from "../component/Footer";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
-import Chat from "../pages/chat";
+import Chat from "../pages/Chat";
 import UserProfile from "../pages/UserProfile";
 
 function Layout() {
